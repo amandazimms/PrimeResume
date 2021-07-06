@@ -1,8 +1,18 @@
-p, h1, h2, h3, h4, h5, h6, li, address {
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+p, h1, h2, h3, h4, h5, h6, li, address, .nav-child {
     font-family: 'Raleway', sans-serif;
 }
 
 body {
+    margin: 0;
     background-color: #f9eaea;
 }
 
@@ -15,6 +25,19 @@ h1 {
 h2 {
     font-weight: 900;
     font-size: 20px;
+}
+
+.time-text {
+    color: #233A5A;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+a {
+    text-decoration: none;
+    color: #233A5A;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 p, li, address {
@@ -62,10 +85,26 @@ address {
     position: relative;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.heading {
+    padding-top: 80px;
+    /* todo - change so that it's 0px if nav bar isn't active */
+}
+
+.nav-bar {
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background: #F9CB6D;
+    padding: 10px;
+}
+
+.nav-child {
+    padding: 0 50px 0 50px;
+    font-weight: 600;
 }
 
 .nav-icon {
