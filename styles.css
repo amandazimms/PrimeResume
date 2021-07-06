@@ -2,6 +2,10 @@ p, h1, h2, h3, h4, h5, h6, li, address {
     font-family: 'Raleway', sans-serif;
 }
 
+body {
+    background-color: #f9eaea;
+}
+
 h1 {
     font-weight: 900;
     font-size: 40px;
@@ -20,14 +24,14 @@ p, li, address {
 address {
     font-style: normal;
     font-size: 15px;
-    color: #10637c;
+    color: #233A5A;
     padding: 0 0 15px 15px;
 
 }
 
 .gradient-text {
     background-color: #1a968e;
-    background-image: linear-gradient(95deg, #96ebe5, #10637c);
+    background-image: linear-gradient(95deg, #233A5A, #7998A0);
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -46,35 +50,31 @@ address {
 
 }
 
-.a {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .b {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-  .c {
-    grid-area: 3 / 2 / 4 / 3;
-  }
-  .d {
-    grid-area: 4 / 2 / 5 / 3;
-  }
- .x {
-    grid-area: 1 / 1 / 2 / 2;
- }
- .y {
-    grid-area: 2 / 1 / 3 / 2;
- }
- .z {
-    grid-area: 4 / 1 / 5 / 2;
- }
-
 
 .title {
     padding: 15px;
 }
 .content {
-    background-color: #669fb0;
+    background-color: #7998A0;
     border-radius: 10px;
     padding: 15px 15px 15px 15px;
     margin: 0 15px 0 0;
+    position: relative;
+}
+
+.flower {
+    width: 100px;
+    height: auto;
+}
+
+.lefty-text {
+    float: left;
+    width: 80%;
+}
+
+.righty-flower {
+    width: auto;
+    position: absolute; 
+    bottom: 15px; 
+    right: 15px;
 }
