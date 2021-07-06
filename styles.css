@@ -35,6 +35,7 @@ h2 {
 }
 
 .bee {
+    z-index: 888;
 }
 
 a {
@@ -97,6 +98,7 @@ address {
     /* todo - change so that it's 0px if nav bar isn't active */
 }
 
+
 .nav-bar {
     position: fixed;
     z-index: 999;
@@ -124,7 +126,7 @@ address {
 }
 
 .bee-img {
-    width: 200px;
+    width: 100px;
     height: auto;
 }
 
@@ -139,3 +141,6 @@ address {
     bottom: 15px; 
     right: 15px;
 }
+
+
+
