@@ -145,18 +145,18 @@ address {
 
 
 /* medium */
-@media screen and (min-width: 650px) and (max-width: 799px) {
+@media screen and (min-width: 650px) and (max-width: 850px) {
 
     body {
-        background-color: pink;
+        background-color: #ffffaa;
       }        
 }
 
 
 /* very wide */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 851px) {
 
     body {
-        background-color: darkblue;
+        background-color: #0000BB;
       }        
 }
