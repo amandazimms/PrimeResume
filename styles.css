@@ -1,3 +1,4 @@
+
 * {
     box-sizing: inherit;
 }
@@ -67,12 +68,18 @@ address {
     -moz-text-fill-color: transparent;
 }
 
+
+
 .grid-container {
     display: grid;
+    margin: 0 auto;
     grid-template-columns: 150px auto;
     grid-gap: 10px;
 }
 
+.box {
+
+}
 
 
 
@@ -86,12 +93,6 @@ address {
     margin: 0 15px 0 0;
     position: relative;
 }
-
-.box {
-
-}
-
-
 
 .heading {
     padding-top: 80px;
@@ -126,7 +127,7 @@ address {
 }
 
 .bee-img {
-    width: 100px;
+    width: 200px;
     height: auto;
 }
 
@@ -143,4 +144,19 @@ address {
 }
 
 
+/* medium */
+@media screen and (min-width: 450px) and (max-width: 799px) {
 
+    body {
+        background-color: lightblue;
+      }        
+}
+
+
+/* very wide */
+@media screen and (min-width: 800px) {
+
+    body {
+        background-color: darkblue;
+      }        
+}
