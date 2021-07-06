@@ -1,4 +1,5 @@
 
+/* main section: SMALL, <480px, for mobile */
 * {
     box-sizing: inherit;
 }
@@ -144,19 +145,19 @@ address {
 }
 
 
-/* medium */
-@media screen and (min-width: 650px) and (max-width: 850px) {
+/* MEDIUM, 480-768px, for tablets */
+@media screen and (min-width: 480px) and (max-width: 768px) {
 
     body {
-        background-color: #ffffaa;
+        /*todo: remove this line; for testing only*/ background-color: #c4ced2;
       }        
 }
 
 
-/* very wide */
-@media screen and (min-width: 851px) {
+/* WIDE, > 769px, for desktop */
+@media screen and (min-width: 769px) {
 
     body {
-        background-color: #0000BB;
+        /*todo: remove this line; for testing only*/ background-color: #a4afb3;
       }        
 }
