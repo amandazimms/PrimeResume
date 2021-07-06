@@ -1,19 +1,33 @@
-p, h1, h2, h3, h4, h5, h6, li {
-    font-family: Tahoma, sans-serif;
+p, h1, h2, h3, h4, h5, h6, li, address {
+    font-family: 'Raleway', sans-serif;
 }
 
 h1 {
+    font-weight: 900;
     font-size: 40px;
+    padding: 0 0 0 15px;
 }
 
 h2 {
+    font-weight: 900;
     font-size: 20px;
-    font-family:'Franklin Gothic Medium';
+}
+
+p, li, address {
+    font-family: 'PT Sans', sans-serif;
+}
+
+address {
+    font-style: normal;
+    font-size: 15px;
+    color: #10637c;
+    padding: 0 0 15px 15px;
+
 }
 
 .gradient-text {
     background-color: #1a968e;
-    background-image: linear-gradient(95deg, #99eb3c, #10637c);
+    background-image: linear-gradient(95deg, #96ebe5, #10637c);
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -23,11 +37,13 @@ h2 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 150px auto;
     grid-gap: 10px;
 }
 
+
 .box {
+
 }
 
 .a {
@@ -53,10 +69,12 @@ h2 {
  }
 
 
-.title{
-    
+.title {
+    padding: 15px;
 }
 .content {
     background-color: #669fb0;
     border-radius: 10px;
+    padding: 15px 15px 15px 15px;
+    margin: 0 15px 0 0;
 }
