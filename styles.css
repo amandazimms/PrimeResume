@@ -9,11 +9,12 @@ html {
 
 p, h1, h2, h3, h4, h5, h6, li, address, .nav-child {
     font-family: 'Raleway', sans-serif;
+    color: #233A5A;
 }
 
 body {
     margin: 0;
-    background-color: #f9eaea;
+    background-color: #d8e3e6;
 }
 
 h1 {
@@ -31,6 +32,9 @@ h2 {
     color: #233A5A;
     font-size: 40px;
     font-weight: bolder;
+}
+
+.bee {
 }
 
 a {
@@ -69,9 +73,6 @@ address {
 }
 
 
-.box {
-
-}
 
 
 .title {
@@ -84,6 +85,12 @@ address {
     margin: 0 15px 0 0;
     position: relative;
 }
+
+.box {
+
+}
+
+
 
 .heading {
     padding-top: 80px;
@@ -113,6 +120,11 @@ address {
 
 .flower {
     width: 100px;
+    height: auto;
+}
+
+.bee-img {
+    width: 200px;
     height: auto;
 }
 
