@@ -18,19 +18,10 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var thirtySeconds = 30,
-        display = document.querySelector('#time');
+    var thirtySeconds = 30;
+    display = document.querySelector('#time');
     startTimer(thirtySeconds, display);
 };
-
-//HONEY COUNT
-let honeyCount = 0;
-
-function ClickFlower() {
-    honeyCount++;
-    console.log("honey count is " + honeyCount);
-  }
-
 
 
 //BEE & FLOWER SETUP
@@ -40,7 +31,40 @@ const speed = 60;
 const cosmos = document.querySelector('.cosmos');
 const pansy = document.querySelector('.pansy');
 const poppy = document.querySelector('.poppy');
+
 const hive = document.querySelector('.beehive-img');
+
+const honeycombDisplay = document.querySelector('.honeycomb-display');
+
+
+
+//HONEY COUNT & POLLEN TRACKING
+let honeyCount = 0;
+let beeHasPollen = false;
+
+let cosmosHasPollen = true;
+let pansyHasPollen = true;
+let poppyHasPollen = true;
+
+
+function ClickFlower() {
+    honeyCount++;
+    console.log("honey count is " + honeyCount);
+  }
+
+function IncrementHoneyCount() {
+    honeyCount++
+    if (honeyCount == 1){
+        honeycombDisplay.src="Honey1.png";
+    }
+    else if (honeyCount == 2){
+        honeycombDisplay.src="Honey2.png";
+    }
+    else if (honeyCount == 3){
+        honeycombDisplay.src="Honey3.png";
+        //todo win condition
+    }
+}
 
 
 //BEE COLLISION WITH FLOWERS
@@ -62,7 +86,23 @@ function CheckDistance(destination) {
     let distToDest = GetDistance(beeX, beeY, destX, destY);
 
     if (distToDest < 50) {
-        console.log("bee is overlapping with: " + destination);
+        if (destination == cosmos && cosmosHasPollen){
+            cosmosHasPollen = false;
+            beeHasPollen = true;
+        } 
+        else if (destination == pansy && pansyHasPollen){
+            pansyHasPollen = false;
+            beeHasPollen = true;
+        } 
+        else if (destination == poppy && poppyHasPollen) {       
+            poppyHasPollen = false;
+            beeHasPollen = true;
+        }
+        else if (destination == hive && beeHasPollen) {
+            beeHasPollen = false;
+            IncrementHoneyCount();
+            console.log("honeycount is " + honeyCount);
+        }
     }
 }
 
@@ -102,6 +142,7 @@ window.addEventListener('keydown', (e) => {
             break;
     }
     bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+    
     CheckDistance(cosmos);
     CheckDistance(poppy);
     CheckDistance(pansy);
@@ -111,26 +152,30 @@ window.addEventListener('keydown', (e) => {
 });
 
 //BEE MOVEMENT, tap arrow keys version (touchscreen)
+function Move()
+{
+    CheckDistance(cosmos);
+    CheckDistance(poppy);
+    CheckDistance(pansy);
+    CheckDistance(hive);
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+}
 function MoveLeft(){
     bee.style.left = parseInt(bee.style.left) - speed + 'px';
     bee.style.transform = "rotate(-90deg)";
-    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveRight(){
     bee.style.left = parseInt(bee.style.left) + speed + 'px';
     bee.style.transform = "rotate(90deg)";
-    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveUp(){
     bee.style.top = parseInt(bee.style.top) - speed + 'px';
     bee.style.transform = "rotate(0deg)";
-    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveDown(){
     bee.style.top = parseInt(bee.style.top) + speed + 'px';
     bee.style.transform = "rotate(180deg)";
-    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
