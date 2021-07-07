@@ -26,8 +26,30 @@ function BeeInvite() {
 }
 
 function ClickBee() {
+    //When the bee is clicked, the game begins!
     console.log("beeclick!!");
     clearInterval(inviteTimer);
+
+    //all devices: display the nav bar
+    const navBar = document.querySelector('.nav-bar');
+    navBar.style.display = "flex";
+    
+    //if it's a touchscreen, also display the touch instructions content, and game-bar (which contains the arrow-button controls)
+    let x = window.matchMedia("(hover: none)")
+    if (x.matches) {
+        const gameBar = document.querySelector('.game-bar');
+        gameBar.style.display = "block";
+
+        const instructionsTouch = document.querySelector('.content-game-touch')
+        instructionsTouch.style.display = "inline-block";
+    }
+
+    //if it's keyboard, also display the keyboard instructions content
+    else {
+        const instructionsKeyboard = document.querySelector('.content-game-keyboard')
+        instructionsKeyboard.style.display = "inline-block";
+    }
+
 }
 
 
@@ -46,6 +68,7 @@ function startTimer(duration, display) {
             timer = duration;
         }
     }, 1000);
+    //todo: understand this function better - why does it start at 60, then 00, then back to 60 before the countdown begins?
 };
 
 window.onload = function () {

@@ -121,7 +121,7 @@ address {
     margin: 25px 15px 0 15px;
 }
 
-.content-1, .content-2 {
+.content-1, .content-2, .content-game {
     
     /*background-color: #7998A0; */
     border-radius: 10px;
@@ -141,6 +141,11 @@ address {
     background-repeat: no-repeat; 
 }
 
+.content-game-keyboard, .content-game-touch {
+    display: none;
+    background: linear-gradient(135deg, #F9CB6D 83%, #7998A0 83%, #7998A0 90%, #F9CB6D 90%, #F9CB6D 92%, #EA6352 92%, #EA6352 94%, #F9CB6D 84%);
+    background-repeat: no-repeat; 
+}
 
 .heading {
     padding-top: 80px;
@@ -151,7 +156,7 @@ address {
 .nav-bar {
     position: fixed;
     z-index: 999;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     height: 80px;
@@ -254,6 +259,7 @@ address {
 /* if it's a touchscreen */
 @media (hover: none) {
     .game-bar {
+        display: none;
         position: fixed;
         z-index: 900;
         width: 100%;
