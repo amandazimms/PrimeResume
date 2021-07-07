@@ -234,10 +234,10 @@ address {
 /* if NOT a touchscreen (has a keyboard) */
 @media (hover: hover) {
     .game-bar {
-        visibility: hidden;
+        display: none;
     }
     .game-arrow {
-        visibility: hidden;
+        display: none;
     }
     .hobbies {
         margin: 0 15px 15px 15px;
@@ -288,4 +288,4 @@ address {
     .hobbies {
     margin: 0 15px 45vmin 15px;
     }
-  }
+  } 
