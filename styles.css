@@ -22,11 +22,17 @@ body {
 h1 {
     font-weight: 900;
     font-size: 40px;
+    margin: 0;
 }
 
 h2 {
     font-weight: 900;
     font-size: 27px;
+}
+
+h4 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
 }
 
 .time-text {
@@ -50,12 +56,19 @@ p, li, address {
     font-family: 'PT Sans', sans-serif;
 }
 
+.email, .email-phone {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
 address {
     font-style: normal;
     font-size: 15px;
     color: #233A5A;
-    padding: 0 0 15px 15px;
-
+    padding: 0;
+    margin: 0;
 }
 
 .gradient-text {
@@ -68,7 +81,23 @@ address {
     -moz-text-fill-color: transparent;
 }
 
+.main-title {
+    margin: 0 0 0 20px;
+}
 
+.title-child-a {
+    width: 100px;
+    display: inline-block;
+}
+
+.title-child-b {
+    width: 240px;
+    display: inline-block;
+}
+
+.contact-info {
+    margin: 0 0 0 20px;
+}
 
 .grid-container {
     display: grid;
@@ -77,26 +106,35 @@ address {
     grid-gap: 10px;
 }
 
+
 .box {
 
 }
-
-
 
 .title {
     margin: 25px 15px 0 15px;
 }
 
-.content {
-    background: linear-gradient(135deg, #7998A0 8%, #F9CB6D 8%, #F9CB6D 15%, #7998A0 15%, #7998A0 17%, #EA6352 17%, #EA6352 19%, #7998A0 19%);
-    background-repeat: no-repeat; 
-
+.content-1, .content-2 {
+    
     /*background-color: #7998A0; */
     border-radius: 10px;
     padding: 15px 15px 15px 15px;
     margin: 0 15px 0 15px;
     position: relative;
 }
+
+.content-1 {
+    background: linear-gradient(135deg, #7998A0 8%, #F9CB6D 8%, #F9CB6D 15%, #7998A0 15%, #7998A0 17%, #EA6352 17%, #EA6352 19%, #7998A0 19%);
+    background-repeat: no-repeat; 
+}
+
+
+.content-2 {
+    background: linear-gradient(135deg, #7998A0 78%, #F9CB6D 78%, #F9CB6D 85%, #7998A0 85%, #7998A0 87%, #EA6352 87%, #EA6352 89%, #7998A0 89%);
+    background-repeat: no-repeat; 
+}
+
 
 .heading {
     padding-top: 80px;
@@ -166,27 +204,30 @@ address {
     
 }
 
-
-/* MEDIUM, 480-768px, for tablets */
-@media screen and (min-width: 480px) and (max-width: 768px) {
-    
-      
+/* MEDIUM, 487-768px, for tablets */
+@media screen and (min-width: 487px) and (max-width: 768px) {
+     
 }
 
 
 /* WIDE, > 769px, for desktop */
 @media screen and (min-width: 769px) {
-      
+
     .grid-container {
         display: grid;
         margin: 0 auto;
-        grid-template-columns: 150px auto;
+        grid-template-columns: 180px auto;
         grid-gap: 10px;
     }
     
     .box {
     
     }
+
+    .about {
+        margin: 30px;
+    }
+
     
 }
 
@@ -198,6 +239,10 @@ address {
     .game-arrow {
         visibility: hidden;
     }
+    .hobbies {
+        margin: 0 15px 15px 15px;
+    }
+
   }
 
 /* if it's a touchscreen */
@@ -238,5 +283,9 @@ address {
         bottom: 0;
         right: 45vmin;
         transform: rotate(270deg);
+    }
+
+    .hobbies {
+    margin: 0 15px 45vmin 15px;
     }
   }
