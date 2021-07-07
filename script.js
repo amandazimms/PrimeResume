@@ -23,7 +23,6 @@ window.onload = function () {
     startTimer(thirtySeconds, display);
 };
 
-
 //HONEY COUNT
 let honeyCount = 0;
 
@@ -37,14 +36,8 @@ function ClickFlower() {
 //BEE & FLOWER SETUP
 const bee = document.querySelector('.bee');
 const speed = 50;
-
 const cosmos = document.querySelector('.cosmos');
 
-function Shape(x, y){
-    this.x = x;
-    this.y = y;
-    this.r = 50;
-}
 
 //BEE COLLISION WITH FLOWERS
 function CheckDistance(flower) {
@@ -81,11 +74,11 @@ function GetDistance(x1, y1, x2, y2){
 
 
 
-//BEE MOVEMENT
+//BEE MOVEMENT, WASD
 window.addEventListener('load', () => {
     bee.style.position = 'absolute'; 
-    bee.style.left = 0;
-    bee.style.top = 0;
+    bee.style.left = "15px";
+    bee.style.top = "115px";
 });
 
 window.addEventListener('keydown', (e) => {
@@ -94,15 +87,40 @@ window.addEventListener('keydown', (e) => {
     switch(e.key) {
         case 'a':
             bee.style.left = parseInt(bee.style.left) - speed + 'px';
+            bee.style.transform = "rotate(-90deg)";
             break;
         case 'd':
             bee.style.left = parseInt(bee.style.left) + speed + 'px';
+            bee.style.transform = "rotate(90deg)";
             break;
         case 'w':
             bee.style.top = parseInt(bee.style.top) - speed + 'px';
+            bee.style.transform = "rotate(0deg)";
             break;
         case 's':
             bee.style.top = parseInt(bee.style.top) + speed + 'px';
+            bee.style.transform = "rotate(180deg)";
             break;
     }
 });
+
+//BEE MOVEMENT, arrow keys
+function MoveLeft(){
+    bee.style.left = parseInt(bee.style.left) - speed + 'px';
+    bee.style.transform = "rotate(-90deg)";
+}
+
+function MoveRight(){
+    bee.style.left = parseInt(bee.style.left) + speed + 'px';
+    bee.style.transform = "rotate(90deg)";
+}
+
+function MoveUp(){
+    bee.style.top = parseInt(bee.style.top) - speed + 'px';
+    bee.style.transform = "rotate(0deg)";
+}
+
+function MoveDown(){
+    bee.style.top = parseInt(bee.style.top) + speed + 'px';
+    bee.style.transform = "rotate(180deg)";
+}
