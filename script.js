@@ -35,12 +35,16 @@ function ClickFlower() {
 
 //BEE & FLOWER SETUP
 const bee = document.querySelector('.bee');
-const speed = 50;
+const speed = 60;
+
 const cosmos = document.querySelector('.cosmos');
+const pansy = document.querySelector('.pansy');
+const poppy = document.querySelector('.poppy');
+const hive = document.querySelector('.beehive-img');
 
 
 //BEE COLLISION WITH FLOWERS
-function CheckDistance(flower) {
+function CheckDistance(destination) {
     let beeRect = bee.getBoundingClientRect();
     let beeHeight = (beeRect.bottom - beeRect.top) /2;
     let beeWidth = (beeRect.right - beeRect.left) /2;
@@ -48,20 +52,17 @@ function CheckDistance(flower) {
     let beeX = beeRect.bottom - beeHeight;
     let beeY = beeRect.right - beeWidth;
 
-    let flowerRect = flower.getBoundingClientRect();
-    let flowerHeight = (flowerRect.bottom - flowerRect.top) /2;
-    let flowerWidth = (flowerRect.right - flowerRect.left) /2;
+    let destRect = destination.getBoundingClientRect();
+    let destHeight = (destRect.bottom - destRect.top) /2;
+    let flowerWidth = (destRect.right - destRect.left) /2;
 
-    let flowerX = flowerRect.bottom - flowerHeight;
-    let flowerY = flowerRect.right - flowerWidth;
+    let destX = destRect.bottom - destHeight;
+    let destY = destRect.right - flowerWidth;
 
-    let distToFlower = GetDistance(beeX, beeY, flowerX, flowerY);
+    let distToDest = GetDistance(beeX, beeY, destX, destY);
 
-    if (distToFlower < 50) {
-        console.log("they are overlapping: " + distToFlower);
-    }
-    else {
-        console.log(distToFlower);
+    if (distToDest < 50) {
+        console.log("bee is overlapping with: " + destination);
     }
 }
 
@@ -74,7 +75,7 @@ function GetDistance(x1, y1, x2, y2){
 
 
 
-//BEE MOVEMENT, WASD
+//BEE MOVEMENT, WASD version (keyboard)
 window.addEventListener('load', () => {
     bee.style.position = 'absolute'; 
     bee.style.left = "15px";
@@ -82,8 +83,6 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('keydown', (e) => {
-    CheckDistance(cosmos);
-
     switch(e.key) {
         case 'a':
             bee.style.left = parseInt(bee.style.left) - speed + 'px';
@@ -102,25 +101,36 @@ window.addEventListener('keydown', (e) => {
             bee.style.transform = "rotate(180deg)";
             break;
     }
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+    CheckDistance(cosmos);
+    CheckDistance(poppy);
+    CheckDistance(pansy);
+    CheckDistance(hive);
+
+
 });
 
-//BEE MOVEMENT, arrow keys
+//BEE MOVEMENT, tap arrow keys version (touchscreen)
 function MoveLeft(){
     bee.style.left = parseInt(bee.style.left) - speed + 'px';
     bee.style.transform = "rotate(-90deg)";
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveRight(){
     bee.style.left = parseInt(bee.style.left) + speed + 'px';
     bee.style.transform = "rotate(90deg)";
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveUp(){
     bee.style.top = parseInt(bee.style.top) - speed + 'px';
     bee.style.transform = "rotate(0deg)";
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
 
 function MoveDown(){
     bee.style.top = parseInt(bee.style.top) + speed + 'px';
     bee.style.transform = "rotate(180deg)";
+    bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
 }
