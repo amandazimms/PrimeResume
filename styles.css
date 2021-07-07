@@ -30,7 +30,7 @@ h2 {
     font-size: 27px;
 }
 
-h4 {
+h5 {
     font-family: 'PT Sans', sans-serif;
     font-size: 15px;
 }
@@ -43,6 +43,12 @@ h4 {
 
 .bee {
     z-index: 888;
+    animation: beeShake .35s infinite; 
+}
+
+@-webkit-keyframes beeShake {
+    50% {transform: rotate(20deg);}
+
 }
 
 a {
@@ -73,7 +79,7 @@ address {
 
 .gradient-text {
     background-color: #1a968e;
-    background-image: linear-gradient(95deg, #233A5A, #7998A0);
+    background-image: linear-gradient(90deg, #233A5A, #2f599489);
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
@@ -131,7 +137,7 @@ address {
 
 
 .content-2 {
-    background: linear-gradient(135deg, #7998A0 78%, #F9CB6D 78%, #F9CB6D 85%, #7998A0 85%, #7998A0 87%, #EA6352 87%, #EA6352 89%, #7998A0 89%);
+    background: linear-gradient(135deg, #7998A0 83%, #F9CB6D 83%, #F9CB6D 90%, #7998A0 90%, #7998A0 92%, #EA6352 92%, #EA6352 94%, #7998A0 84%);
     background-repeat: no-repeat; 
 }
 

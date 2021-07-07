@@ -1,5 +1,36 @@
 'use script'
 
+
+//BEE & FLOWER SETUP
+const bee = document.querySelector('.bee');
+const speed = 60;
+
+const cosmos = document.querySelector('.cosmos');
+const pansy = document.querySelector('.pansy');
+const poppy = document.querySelector('.poppy');
+
+const hive = document.querySelector('.beehive-img');
+
+const honeycombDisplay = document.querySelector('.honeycomb-display');
+
+let inviteTimer = setInterval(BeeInvite, 3000);
+
+function BeeInvite() {
+
+    bee.style.animationPlayState = 'running';
+        setTimeout(() => { 
+            bee.style.animationPlayState = 'paused';
+        ; }, 800);
+
+    console.log("bee has not been clicked");
+}
+
+function ClickBee() {
+    console.log("beeclick!!");
+    clearInterval(inviteTimer);
+}
+
+
 //TIMER
 function startTimer(duration, display) {
     var timer = duration, seconds;
@@ -15,27 +46,15 @@ function startTimer(duration, display) {
             timer = duration;
         }
     }, 1000);
-}
+};
 
 window.onload = function () {
     var sixtySeconds = 60;
     display = document.querySelector('#time');
     startTimer(sixtySeconds, display);
+
+    BeeInvite();
 };
-
-
-//BEE & FLOWER SETUP
-const bee = document.querySelector('.bee');
-const speed = 60;
-
-const cosmos = document.querySelector('.cosmos');
-const pansy = document.querySelector('.pansy');
-const poppy = document.querySelector('.poppy');
-
-const hive = document.querySelector('.beehive-img');
-
-const honeycombDisplay = document.querySelector('.honeycomb-display');
-
 
 
 //HONEY COUNT & POLLEN TRACKING
@@ -112,8 +131,8 @@ function GetDistance(x1, y1, x2, y2){
 //BEE MOVEMENT, WASD version (keyboard)
 window.addEventListener('load', () => {
     bee.style.position = 'absolute'; 
-    bee.style.left = "15px";
-    bee.style.top = "115px";
+    bee.style.left = "10px";
+    bee.style.top = "86px";
 });
 
 window.addEventListener('keydown', (e) => {
