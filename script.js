@@ -18,9 +18,9 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var thirtySeconds = 30;
+    var sixtySeconds = 60;
     display = document.querySelector('#time');
-    startTimer(thirtySeconds, display);
+    startTimer(sixtySeconds, display);
 };
 
 
@@ -46,12 +46,6 @@ let cosmosHasPollen = true;
 let pansyHasPollen = true;
 let poppyHasPollen = true;
 
-
-function ClickFlower() {
-    honeyCount++;
-    console.log("honey count is " + honeyCount);
-  }
-
 function IncrementHoneyCount() {
     honeyCount++
     if (honeyCount == 1){
@@ -62,7 +56,7 @@ function IncrementHoneyCount() {
     }
     else if (honeyCount == 3){
         honeycombDisplay.src="Honey3.png";
-        //todo win condition
+        //todo add win condition
     }
 }
 

@@ -16,7 +16,7 @@ p, h1, h2, h3, h4, h5, h6, li, address, .nav-child {
 
 body {
     margin: 0;
-    background-color: #d8e3e6;
+    background-color: #c4dee4;
 }
 
 h1 {
@@ -88,7 +88,10 @@ address {
 }
 
 .content {
-    background-color: #7998A0;
+    background: linear-gradient(135deg, #7998A0 8%, #F9CB6D 8%, #F9CB6D 15%, #7998A0 15%, #7998A0 17%, #EA6352 17%, #EA6352 19%, #7998A0 19%);
+    background-repeat: no-repeat; 
+
+    /*background-color: #7998A0; */
     border-radius: 10px;
     padding: 15px 15px 15px 15px;
     margin: 0 15px 0 15px;
@@ -109,7 +112,7 @@ address {
     align-items: center;
     height: 80px;
     width: 100%;
-    background: #F9CB6D;
+    background: #fff;
     padding: 10px;
 }
 
@@ -166,11 +169,6 @@ address {
 
 /* MEDIUM, 480-768px, for tablets */
 @media screen and (min-width: 480px) and (max-width: 768px) {
-
-    body {
-        /*todo: remove this line; for testing only*/ background-color: #c4ced2;
-      }   
-
     
       
 }
@@ -178,10 +176,6 @@ address {
 
 /* WIDE, > 769px, for desktop */
 @media screen and (min-width: 769px) {
-
-    body {
-        /*todo: remove this line; for testing only*/ background-color: #a4afb3;
-      } 
       
     .grid-container {
         display: grid;
