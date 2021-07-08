@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" type="image/png" href="BeeRest.png"/>
+
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,19 +21,19 @@
     <div class="nav-bar">
         <div class="nav-child"><input type="image" class="nav-icon honeycomb-display" src="Honey0.png" /></div>
         <div class="nav-child time-text"><span id="time">60</span></div>
-        <div class="nav-child"><a href="">?</a></div>
-        <!--todo: help currently leads nowhere ^ -->
+        <div class="nav-child"><a class="nav-link" href="#GameInstructions">?</a></div>
     </div>   
 
     <div class="game-bar">
-        <div class="nav-child"><input type="image" class="game-arrow arrow-up" src="Arrow.png" onclick="MoveUp(); Move()" /></div>
-        <div class="nav-child"><input type="image" class="game-arrow arrow-right" src="Arrow.png" onclick="MoveRight(); Move()"/></div>
-        <div class="nav-child"><input type="image" class="game-arrow arrow-down" src="Arrow.png" onclick="MoveDown(); Move()" /></div>
-        <div class="nav-child"><input type="image" class="game-arrow arrow-left" src="Arrow.png" onclick="MoveLeft(); Move()"/></div>
+        <div class="nav-child"><input type="image" class="game-arrow arrow-up" src="Arrow.png" onclick="MoveUp()" /></div>
+        <div class="nav-child"><input type="image" class="game-arrow arrow-right" src="Arrow.png" onclick="MoveRight()"/></div>
+        <div class="nav-child"><input type="image" class="game-arrow arrow-down" src="Arrow.png" onclick="MoveDown()" /></div>
+        <div class="nav-child"><input type="image" class="game-arrow arrow-left" src="Arrow.png" onclick="MoveLeft()"/></div>
     </div> 
 
     <div class="bee"><input type="image" class="bee-img" src="BeeRest.png" onclick="ClickBee()"/></div>
 
+    <div><input type="image" class="notice" src="Notice.png"/></div>
     <div class="heading">
         <div class="main-title">
             <div class="title-child-a beehive"><input type="image" class="beehive-img" src="Beehive.png" /></div>
@@ -44,15 +45,27 @@
         </div>
     </div>
 
-    <div class="box content-game-touch">
-        <h3>Save the Bees!</h3> 
-        <p>Use the WASD keys to navigate the bee to the flowers on this page. Bring the pollen you collect back to the hive to turn it into honey. The clock is ticking...</p>
-     </div>
+    <div id="GameInstructions">
+        <div class="box content-game-touch">
+            <h3>Save the Bees!</h3> 
+            <p>Use the WASD keys to navigate the bee to the flowers on this page. Bring the pollen you collect back to the hive to turn it into honey. The clock is ticking...<br><br>*Best played with sound on*</p>
+        </div>
 
-     <div class="box content-game-keyboard">
-        <h3>Save the Bees!</h3> 
-        <p>Use the arrows below to navigate the bee to the flowers on this page. Bring the pollen you collect back to the hive to turn it into honey. The clock is ticking...</p>
-     </div>
+        <div class="box content-game-keyboard">
+            <h3>Save the Bees!</h3> 
+            <p>Use the arrows below to navigate the bee to the flowers on this page. Bring the pollen you collect back to the hive to turn it into honey. The clock is ticking...<br><br>*Best played with sound on*</p>
+        </div>
+
+        <div class="box content-game-win">
+            <h3>You Win!</h3> 
+            <p>Congrats, you saved the bees! Refresh to play again. 
+            <br><a href="https://thebeeconservancy.org/10-ways-to-save-the-bees/?gclid=CjwKCAjw_o-HBhAsEiwANqYhp-tZQZXWVcE4ZANj5Qr7wfNEU1EdpY7WKYNbPe-eNmXAegGxKlW5FxoCvmsQAvD_BwE">Help save real bees:  </a>
+        </div>
+        <div class="box content-game-lose">
+            <h3>You Lose :(</h3> 
+            <p>Uh oh, you didn't make enough honey in time. Refresh to try again.
+        </div>
+    </div>
 
     <div class="grid-container">
         <div class="box w title gradient-text">
@@ -108,7 +121,8 @@
         </div>
         <div class="box zz title gradient-text">
             <h2>Hobbies</h2>
-    </div> 
+    </div>
+
     <div class="box e content-1 hobbies">
             <p>
                 When I'm not programming, I'm most likely to be found digging in the dirt. I especially love watching bees, butterflies, and other insects as they buzz around my pollinator garden.

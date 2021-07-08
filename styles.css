@@ -6,6 +6,9 @@
 
 html {
     box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-padding-top: 88px;
 }
 
 
@@ -36,9 +39,19 @@ h5 {
 }
 
 .time-text {
-    color: #233A5A;
+    color: #313c4b;
     font-size: 40px;
     font-weight: bolder;
+}
+
+.notice {
+    z-index: 890;
+    position: fixed;
+    margin: 5px 0 0 15px;
+    display: none;
+
+    width: 80px;
+    height: auto;
 }
 
 .bee {
@@ -48,14 +61,13 @@ h5 {
 
 @-webkit-keyframes beeShake {
     50% {transform: rotate(20deg);}
-
 }
 
 a {
     text-decoration: none;
     color: #233A5A;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 p, li, address {
@@ -64,7 +76,7 @@ p, li, address {
 
 .email, .email-phone {
     font-family: 'PT Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     padding: 0;
     margin: 0;
 }
@@ -121,7 +133,7 @@ address {
     margin: 25px 15px 0 15px;
 }
 
-.content-1, .content-2, .content-game {
+.content-1, .content-2, .content-game-touch, .content-game-keyboard, .content-game-win, .content-game-lose {
     
     /*background-color: #7998A0; */
     border-radius: 10px;
@@ -141,7 +153,7 @@ address {
     background-repeat: no-repeat; 
 }
 
-.content-game-keyboard, .content-game-touch {
+.content-game-keyboard, .content-game-touch, .content-game-win, .content-game-lose {
     display: none;
     background: linear-gradient(135deg, #F9CB6D 83%, #7998A0 83%, #7998A0 90%, #F9CB6D 90%, #F9CB6D 92%, #EA6352 92%, #EA6352 94%, #F9CB6D 84%);
     background-repeat: no-repeat; 
@@ -151,7 +163,6 @@ address {
     padding-top: 80px;
     /* todo - change so that it's 0px if nav bar isn't active */
 }
-
 
 .nav-bar {
     position: fixed;
@@ -172,6 +183,11 @@ address {
 
 .nav-icon {
     width: 50px;
+}
+
+.nav-link {
+    font-weight: 900;
+    font-size: 45px;
 }
 
 .flower {
