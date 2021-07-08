@@ -91,6 +91,7 @@ address {
 
 .gradient-text {
     color: #233A5A;
+    @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
     background-color: #1a968e;
     background-image: linear-gradient(90deg, #233A5A, #2f599489);
     background-size: 100%;
@@ -98,6 +99,7 @@ address {
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+    }
 }
 
 .main-title {
@@ -196,6 +198,11 @@ address {
     height: auto;
 }
 
+.cosmos {
+    width: 130px;
+    height: auto;
+}
+
 .bee-img {
     width: 100px;
     height: auto;
@@ -207,15 +214,12 @@ address {
 }
 
 .lefty-text {
-    float: left;
     width: 80%;
 }
 
 .righty-image {
-    width: auto;
-    position: absolute; 
-    bottom: 15px; 
-    right: 15px;
+    float: right;
+    padding-top: 50px;
 }
 
 .righty-text {
@@ -230,6 +234,10 @@ address {
     width: 100px;
     margin: 33px 8px 0px 16px;
     
+}
+
+.education {
+    height: 200px;
 }
 
 /* MEDIUM, 487-768px, for tablets */
