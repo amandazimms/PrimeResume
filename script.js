@@ -77,9 +77,9 @@ function ClickBee() {
         clearInterval(inviteTimer);
 
         //start the timer
-        var sixtySeconds = 60;
+        var oneHundredSeconds = 100;
         display = document.querySelector('#time');
-        Countdown(sixtySeconds, display);
+        Countdown(oneHundredSeconds, display);
 
 
         //all devices: display the nav bar
