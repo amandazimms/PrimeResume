@@ -177,7 +177,7 @@ address {
 }
 
 .nav-child {
-    padding: 0 50px 0 50px;
+    padding: 10px 10px 10px 10px;
     font-weight: 600;
 }
 
@@ -275,11 +275,20 @@ address {
 /* if it's a touchscreen */
 @media (hover: none) {
     .game-bar {
-        display: none;
+        display: none; /*gets changed in JS later*/
         position: fixed;
         z-index: 900;
         width: 100%;
-        height: 40vmin;
+        height: 55vmin;
+        bottom: 30px;
+        background-color: #ffffffc8;
+    }
+    .game-bar-bottom {
+        display: none; /*gets changed in JS later*/
+        position: fixed;
+        z-index: 900;
+        width: 100%;
+        height: 30px;
         bottom: 0;
         background-color: #ffffffc8;
     }
@@ -288,7 +297,7 @@ address {
     }
 
     .arrow-right {
-        bottom: 4vh;
+        bottom: 10vh;
         right: 5vw;
         position: fixed;
         width: 70px;
@@ -296,14 +305,13 @@ address {
     }
     
     .arrow-left {
-        bottom: 4vh;
+        bottom: 10vh;
         left: 5vw;
         position: fixed;
         width: 70px;
     }
     
     .arrow-up {
-        bottom: 20vmin;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -312,7 +320,6 @@ address {
     }
     
     .arrow-down {
-        bottom: 0;
         display: block;
         margin-left: auto;
         margin-right: auto;

@@ -92,6 +92,9 @@ function ClickBee() {
             const gameBar = document.querySelector('.game-bar');
             gameBar.style.display = "block";
 
+            const gameBarBottom = document.querySelector('.game-bar-bottom');
+            gameBarBottom.style.display = "block";
+
             const instructionsTouch = document.querySelector('.content-game-touch')
             instructionsTouch.style.display = "inline-block";
         }
