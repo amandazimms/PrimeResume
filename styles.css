@@ -90,6 +90,7 @@ address {
 }
 
 .gradient-text {
+    color: #233A5A;
     background-color: #1a968e;
     background-image: linear-gradient(90deg, #233A5A, #2f599489);
     background-size: 100%;
