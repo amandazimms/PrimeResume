@@ -4,6 +4,8 @@
 //GAME SETUP
 let beeIsLocked = true; //start page with bee unable to move, so user doesn't accidentally start the game before they know what it is
 const bee = document.querySelector('.bee');
+const beeImg = document.querySelector('.bee-img');
+
 const notice = document.querySelector('.notice');
 let gameHasStarted = false;
 
@@ -298,7 +300,8 @@ window.addEventListener('keydown', (e) => {
         bee.style.left = left;
         bee.style.top = top;
     }
-    
+    SwitchBeeImage();
+
     bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
     
     CheckDistance(cosmos);
@@ -309,7 +312,10 @@ window.addEventListener('keydown', (e) => {
 });
 
 //BEE MOVEMENT, tap arrow keys version (touchscreen)
+//note that we shouldn't need to check for isBeeLocked for touchscreen as the only way to move only appears after she's unlocked
 function MoveLeft(){
+    SwitchBeeImage();
+
     let left = bee.style.left;
     let top = bee.style.top;
 
@@ -331,6 +337,8 @@ function MoveLeft(){
 }
 
 function MoveRight(){
+    SwitchBeeImage();
+
     let left = bee.style.left;
     let top = bee.style.top;
 
@@ -351,6 +359,8 @@ function MoveRight(){
 }
 
 function MoveUp(){
+    SwitchBeeImage();
+
     let left = bee.style.left;
     let top = bee.style.top;
 
@@ -371,6 +381,8 @@ function MoveUp(){
 }
 
 function MoveDown(){
+    SwitchBeeImage();
+
     let left = bee.style.left;
     let top = bee.style.top;
 
@@ -388,4 +400,24 @@ function MoveDown(){
     }
 
     bee.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+}
+
+let beeImageCounter = 0;
+function SwitchBeeImage(){
+    
+
+    beeImageCounter++;
+
+    if (beeImageCounter == 0){
+        beeImg.src="BeeUp.png";
+    } 
+    else if (beeImageCounter == 1){
+        beeImg.src="BeeDown.png"
+    }
+    else if (beeImageCounter == 2) {
+        beeImg.src="BeeUp.png";
+        beeImageCounter = 0;
+    }
+    beeImg.style.width = "170px";
+
 }
