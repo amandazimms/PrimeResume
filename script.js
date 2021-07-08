@@ -79,7 +79,7 @@ function ClickBee() {
         //start the timer
         var sixtySeconds = 60;
         display = document.querySelector('#time');
-        startTimer(sixtySeconds, display);
+        Countdown(sixtySeconds, display);
 
 
         //all devices: display the nav bar
@@ -106,18 +106,15 @@ function ClickBee() {
 }
 
 
-//TIMER
-function startTimer(duration, display) {
-    var timer = duration, seconds;
+//COUNTDOWN
+function Countdown(startingInt) {
     
-    setInterval(function () {
-        seconds = parseInt(timer % 60, 10);
+    let countingDown = setInterval(function () {
+        
+        startingInt--;
+        display.textContent = startingInt;
 
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = seconds;
-
-        if (--timer < 0 && honeyCount < 3) {
+        if (startingInt == 0 && honeyCount < 3) {
             //lose :(
               
             let loseGame = new sound("Lose.mp3");
@@ -132,14 +129,16 @@ function startTimer(duration, display) {
             const winText = document.querySelector('.content-game-lose')
             winText.style.display = "block";
 
-            timer = duration;
+            var element_to_scroll_to = document.getElementById('GameInstructions');
+            element_to_scroll_to.scrollIntoView();
+           
+            clearInterval(countingDown);
         }
-        else if (--timer < 0) {
-            timer = duration;
+        else if (startingInt == 0) {
+            clearInterval(countingDown);
         }
         
     }, 1000);
-    //todo: understand this function better - why does it start at 60, then 00, then back to 60 before the countdown begins?
 };
 
 window.onload = function () {
